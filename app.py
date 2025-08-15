@@ -66,7 +66,10 @@ def send_websocket_message(message_type: Literal["user_message", "system_message
     message = {
         "type": message_type,
         "job_title": job_title,
-        "content": content
+        "content": content,
+        "upload_decision": "NO",
+        "upload_processing_status": "CONVERSATION",
+        "documents": []
     }
     if thread_id:
         message["thread_id"] = thread_id
